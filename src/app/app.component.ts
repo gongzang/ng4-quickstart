@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Address } from '../interfaces/address.interface'
+
+import { Address } from '../interfaces/address.interface';
+
 
 @Component({
   selector: 'app-root',
@@ -24,6 +26,12 @@ export class AppComponent {
 
   toggleSkill(){
     this.showSkill = !this.showSkill;
+  }
+  addSkill(skill:string){
+    let skillStr = skill.trim();
+    if(this.skills.indexOf(skillStr) === -1){
+      this.skills.push(skillStr);
+    }
   }
  
 }
